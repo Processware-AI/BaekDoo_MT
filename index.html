@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>백두산 관광상품 제안 | 인천상공회의소 CEO 아카데미 총동문회 산악동호회</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap');
+
+  :root {
+    --primary: #1a3a5c;
+    --primary-light: #2c5f8a;
+    --accent: #d4a853;
+    --accent-dark: #b8912e;
+    --bg: #f5f0e8;
+    --card-bg: #ffffff;
+    --text: #2d2d2d;
+    --text-light: #666;
+    --north: #2e7d32;
+    --north-light: #e8f5e9;
+    --north-bg: #f1f8e9;
+    --west: #c62828;
+    --west-light: #ffebee;
+    --west-bg: #fff3e0;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-hover: 0 8px 40px rgba(0,0,0,0.15);
+    --radius: 16px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── Hero Section ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 40%, #2c3e50 100%);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(212,168,83,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(44,95,138,0.2) 0%, transparent 50%);
+  }
+
+  .hero-mountain {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    overflow: hidden;
+  }
+
+  .hero-mountain svg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    max-width: 900px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(212,168,83,0.2);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.4rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, var(--accent), #f0d78c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .hero-info-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-info-item {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 1rem 1.8rem;
+    color: #fff;
+    min-width: 160px;
+  }
+
+  .hero-info-item .label {
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-info-item .value {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(212,168,83,0.3);
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(212,168,83,0.5);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+    color: rgba(255,255,255,0.4);
+    font-size: 1.5rem;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+  }
+
+  /* ── Section Styles ── */
+  .section {
+    padding: 5rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+  }
+
+  .section-title .divider {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+  }
+
+  /* ── Overview Cards ── */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .overview-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+
+  .overview-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .overview-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .overview-card h3 {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+
+  .overview-card .val {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* ── Included / Not Included ── */
+  .include-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .include-box {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+
+  .include-box h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .include-box.included h3 { color: var(--north); }
+  .include-box.not-included h3 { color: var(--west); }
+
+  .include-box ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .include-box ul li {
+    background: #f8f8f8;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    border: 1px solid #eee;
+  }
+
+  .include-box.included ul li {
+    background: var(--north-light);
+    border-color: #c8e6c9;
+  }
+
+  .include-box.not-included ul li {
+    background: var(--west-light);
+    border-color: #ffcdd2;
+  }
+
+  /* ── Course Tabs ── */
+  .course-section {
+    background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+    padding: 5rem 1.5rem;
+  }
+
+  .course-section .section-title {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+  }
+
+  .tab-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .tab-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .tab-btn {
+    padding: 1rem 2.5rem;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    background: var(--card-bg);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .tab-btn .tab-icon {
+    font-size: 1.3rem;
+  }
+
+  .tab-btn.north { color: var(--north); }
+  .tab-btn.west { color: var(--west); }
+
+  .tab-btn.north.active,
+  .tab-btn.north:hover {
+    background: var(--north);
+    color: #fff;
+    border-color: var(--north);
+    box-shadow: 0 4px 20px rgba(46,125,50,0.3);
+  }
+
+  .tab-btn.west.active,
+  .tab-btn.west:hover {
+    background: var(--west);
+    color: #fff;
+    border-color: var(--west);
+    box-shadow: 0 4px 20px rgba(198,40,40,0.3);
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    position: relative;
+    padding: 0;
+  }
+
+  .day-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 0;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .day-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .north-course .day-header { background: linear-gradient(135deg, #2e7d32, #43a047); }
+  .west-course .day-header { background: linear-gradient(135deg, #c62828, #e53935); }
+  .common-day .day-header { background: linear-gradient(135deg, var(--primary), var(--primary-light)); }
+
+  .day-label {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .day-date {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+
+  .day-route {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+    background: rgba(255,255,255,0.15);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+  }
+
+  .day-body {
+    padding: 2rem;
+  }
+
+  .event-list {
+    list-style: none;
+  }
+
+  .event-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: flex-start;
+  }
+
+  .event-item:last-child { border-bottom: none; }
+
+  .event-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .north-course .event-icon { background: var(--north-light); }
+  .west-course .event-icon { background: var(--west-light); }
+  .common-day .event-icon { background: #e3f2fd; }
+
+  .event-details h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+
+  .event-details p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+
+  .event-time {
+    font-size: 0.8rem;
+    color: var(--accent-dark);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Meals Row */
+  .meals-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1.2rem 2rem;
+    background: #fafafa;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .meal-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+  }
+
+  .meal-tag .meal-icon { font-size: 1rem; }
+
+  /* Hotel Row */
+  .hotel-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2rem;
+    background: linear-gradient(135deg, #f8f6f0, #faf8f2);
+    border-top: 1px solid #eee;
+  }
+
+  .hotel-row .hotel-icon { font-size: 1.5rem; }
+
+  .hotel-row .hotel-info h4 {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--primary);
+  }
+
+  .hotel-row .hotel-info p {
+    font-size: 0.85rem;
+    color: var(--accent-dark);
+  }
+
+  /* ── Comparison Table ── */
+  .comparison-section {
+    padding: 5rem 1.5rem;
+    background: #fff;
+  }
+
+  .comparison-table-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .comparison-table thead th {
+    padding: 1.2rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  .comparison-table thead th:first-child {
+    background: var(--primary);
+    text-align: left;
+  }
+
+  .comparison-table thead th:nth-child(2) { background: var(--north); }
+  .comparison-table thead th:nth-child(3) { background: var(--west); }
+
+  .comparison-table tbody td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+    vertical-align: top;
+  }
+
+  .comparison-table tbody tr:last-child td { border-bottom: none; }
+
+  .comparison-table tbody td:first-child {
+    font-weight: 600;
+    color: var(--primary);
+    background: #fafafa;
+    white-space: nowrap;
+  }
+
+  .comparison-table tbody tr:hover td {
+    background: #f8f8f8;
+  }
+
+  .comparison-table tbody tr:hover td:first-child {
+    background: #f0f0f0;
+  }
+
+  /* ── Meeting Info ── */
+  .meeting-section {
+    padding: 4rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary), #0d1b2a);
+    color: #fff;
+  }
+
+  .meeting-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .meeting-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--accent);
+  }
+
+  .meeting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .meeting-item {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .meeting-item .m-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .meeting-item .m-label { font-size: 0.8rem; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; }
+  .meeting-item .m-value { font-size: 1.1rem; font-weight: 600; margin-top: 0.3rem; }
+
+  /* ── Price Section ── */
+  .price-section {
+    padding: 5rem 1.5rem;
+    text-align: center;
+  }
+
+  .price-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 3rem;
+    box-shadow: var(--shadow-hover);
+    border: 2px solid var(--accent);
+  }
+
+  .price-card .price-label {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .price-card .price-amount {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .price-card .price-note {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .price-card .price-detail {
+    background: #f8f6f0;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .price-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .price-highlight-tag {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    background: #111;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .footer-brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-tel {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0.5rem 0 1rem;
+  }
+
+  .footer-note {
+    font-size: 0.85rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .include-section { grid-template-columns: 1fr; }
+    .hero-info-row { gap: 1rem; }
+    .hero-info-item { min-width: 140px; padding: 0.8rem 1.2rem; }
+    .tab-buttons { flex-direction: column; align-items: center; }
+    .tab-btn { width: 100%; max-width: 300px; justify-content: center; }
+    .day-header { flex-direction: column; align-items: flex-start; }
+    .day-body { padding: 1.5rem; }
+    .comparison-table { font-size: 0.85rem; }
+    .comparison-table thead th,
+    .comparison-table tbody td { padding: 0.8rem; }
+    .price-card { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════ HERO ════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-mountain">
+    <svg viewBox="0 0 1440 400" preserveAspectRatio="none" fill="none">
+      <path d="M0 400 L0 280 Q120 200 240 250 Q360 180 480 220 Q560 140 660 100 Q720 60 780 100 Q880 180 960 160 Q1080 120 1200 200 Q1320 260 1440 230 L1440 400Z" fill="rgba(255,255,255,0.03)"/>
+      <path d="M0 400 L0 320 Q180 260 360 300 Q480 240 600 270 Q680 200 760 170 Q820 140 880 170 Q1000 240 1120 220 Q1280 280 1440 260 L1440 400Z" fill="rgba(255,255,255,0.05)"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">인천상공회의소 CEO 아카데미 총동문회 산악동호회</div>
+    <h1><span>백두산</span> 관광상품<br>제안서</h1>
+    <p class="hero-sub">북파 또는 서파 / 용정 / 도문 / 두만강 &mdash; 2박 3일</p>
+    <div class="hero-info-row">
+      <div class="hero-info-item">
+        <div class="label">여행 일정</div>
+        <div class="value">2026. 8. 27 - 29</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="label">항공편</div>
+        <div class="value">아시아나 직항</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="label">인원</div>
+        <div class="value">30 ~ 60명</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="label">비용 (1인)</div>
+        <div class="value">1,249,000원</div>
+      </div>
+    </div>
+    <a href="#courses" class="hero-cta">코스 비교하기</a>
+  </div>
+  <div class="scroll-indicator">&#9660;</div>
+</section>
+
+<!-- ════════════════════════════════════ OVERVIEW ═══════════════════════════════════════ -->
+<section class="section">
+  <div class="section-title">
+    <h2>여행 개요</h2>
+    <p>NO팁 + NO옵션 + 만찬 포함</p>
+    <span class="divider"></span>
+  </div>
+
+  <div class="overview-grid">
+    <div class="overview-card">
+      <div class="icon">&#9992;&#65039;</div>
+      <h3>항공편</h3>
+      <div class="val">아시아나 OZ351 / OZ352</div>
+    </div>
+    <div class="overview-card">
+      <div class="icon">&#128197;</div>
+      <h3>일정</h3>
+      <div class="val">2박 3일 (8/27 ~ 8/29)</div>
+    </div>
+    <div class="overview-card">
+      <div class="icon">&#127976;</div>
+      <h3>숙소</h3>
+      <div class="val">5성급 호텔 (2인 1실)</div>
+    </div>
+    <div class="overview-card">
+      <div class="icon">&#128176;</div>
+      <h3>비용</h3>
+      <div class="val">1,249,000원 / 1인</div>
+    </div>
+  </div>
+
+  <div class="include-section">
+    <div class="include-box included">
+      <h3>&#9989; 포함 사항</h3>
+      <ul>
+        <li>왕복 항공료</li>
+        <li>유류세 / 택스비</li>
+        <li>전 일정 호텔 (2인 1실)</li>
+        <li>일정표상 식사비</li>
+        <li>관광지 입장료</li>
+        <li>리무진버스 2대</li>
+        <li>기사 및 가이드 팁</li>
+        <li>전신 마사지 1시간 30분</li>
+        <li>여행자 보험</li>
+        <li>온천장 입장료</li>
+      </ul>
+    </div>
+    <div class="include-box not-included">
+      <h3>&#10060; 불포함 사항</h3>
+      <ul>
+        <li>개인 경비</li>
+        <li>음료</li>
+        <li>싱글차지비 160,000원</li>
+        <li>쇼핑 1회</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ COURSES ═══════════════════════════════════════ -->
+<section class="course-section" id="courses">
+  <div class="section-title">
+    <h2>코스 선택</h2>
+    <p>백두산 북파 코스와 서파 코스 중 선택하실 수 있습니다</p>
+    <span class="divider"></span>
+  </div>
+
+  <div class="tab-container">
+    <div class="tab-buttons">
+      <button class="tab-btn north active" onclick="switchTab('north')">
+        <span class="tab-icon">&#127956;&#65039;</span> 제안 1 &mdash; 북파 코스
+      </button>
+      <button class="tab-btn west" onclick="switchTab('west')">
+        <span class="tab-icon">&#9968;&#65039;</span> 제안 2 &mdash; 서파 코스
+      </button>
+    </div>
+
+    <!-- ─────── NORTH COURSE ─────── -->
+    <div class="tab-content active" id="tab-north">
+
+      <!-- Day 1 (공통) -->
+      <div class="day-card common-day">
+        <div class="day-header">
+          <div>
+            <div class="day-label">제1일 &mdash; 8월 27일 (목)</div>
+            <div class="day-date">인천 &rarr; 연길 &rarr; 이도백하</div>
+          </div>
+          <div class="day-route">OZ351 &nbsp; 15:20 출발</div>
+        </div>
+        <div class="day-body">
+          <ul class="event-list">
+            <li class="event-item">
+              <div class="event-icon">&#9992;&#65039;</div>
+              <div class="event-details">
+                <h4>인천 국제공항 출발</h4>
+                <p>제2여객터미널 &middot; 비행시간 약 2시간 10분</p>
+              </div>
+              <div class="event-time">15:20</div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128747;</div>
+              <div class="event-details">
+                <h4>연길 국제공항 도착</h4>
+                <p>입국 수속 및 가이드 미팅</p>
+              </div>
+              <div class="event-time">16:30</div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128652;</div>
+              <div class="event-details">
+                <h4>이도백하로 이동</h4>
+                <p>리무진버스 이동 약 2시간 소요</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#9832;&#65039;</div>
+              <div class="event-details">
+                <h4>다이너스티 온천욕 체험</h4>
+                <p>수영복 + 수영모 필수! &middot; 22시까지 이용 가능</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="meals-row">
+          <div class="meal-tag"><span class="meal-icon">&#127843;</span> 중식: 기내식</div>
+          <div class="meal-tag"><span class="meal-icon">&#127860;</span> 석식: 특식</div>
+        </div>
+        <div class="hotel-row">
+          <div class="hotel-icon">&#127976;</div>
+          <div class="hotel-info">
+            <h4>다이너스티 온천 호텔</h4>
+            <p>&#11088;&#11088;&#11088;&#11088;&#11088; &middot; 2인 1실</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 North -->
+      <div class="day-card north-course">
+        <div class="day-header">
+          <div>
+            <div class="day-label">제2일 &mdash; 8월 28일 (금)</div>
+            <div class="day-date">이도백하 &rarr; 백두산 북파 &rarr; 용정 &rarr; 연길</div>
+          </div>
+          <div class="day-route">&#127956;&#65039; 북파 코스</div>
+        </div>
+        <div class="day-body">
+          <ul class="event-list">
+            <li class="event-item">
+              <div class="event-icon">&#128652;</div>
+              <div class="event-details">
+                <h4>백두산 북파로 이동</h4>
+                <p>호텔 출발, 약 30분 소요</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128656;</div>
+              <div class="event-details">
+                <h4>셔틀버스 &rarr; 봉고차(짚차) 환승</h4>
+                <p>셔틀버스로 삼거리 주차장 이동(1시간 10분) &rarr; 10인승 봉고차로 천문봉 이동</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#9968;&#65039;</div>
+              <div class="event-details">
+                <h4>천지(天池) 조망</h4>
+                <p>천문봉 정상에서 백두산 천지 감상 후 하산</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128167;</div>
+              <div class="event-details">
+                <h4>온천지대 &amp; 장백폭포</h4>
+                <p>셔틀버스로 폭포 주차장 이동(약 5분), 온천지대 및 장백폭포 관광</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128205;</div>
+              <div class="event-details">
+                <h4>용정 관광</h4>
+                <p>이도백하 &rarr; 용정 이동(약 1시간 30분)</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#127758;</div>
+              <div class="event-details">
+                <h4>해란강 &middot; 일송정 (차창 관광)</h4>
+                <p>해란강: 두만강 지류, 가곡 '선구자'에 언급된 강<br>일송정: 항일 의지의 상징</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128218;</div>
+              <div class="event-details">
+                <h4>용두레 우물 &middot; 윤동주 생가</h4>
+                <p>독립 운동의 근거지 용정 &middot; 윤동주 시인이 유년시절을 보낸 곳</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128134;</div>
+              <div class="event-details">
+                <h4>전신 마사지</h4>
+                <p>피로를 풀어주는 전신 마사지 90분 (매너팁 별도)</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#127865;</div>
+              <div class="event-details">
+                <h4>만찬 (단독룸)</h4>
+                <p>만찬 및 석식 후 호텔 이동</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="meals-row">
+          <div class="meal-tag"><span class="meal-icon">&#127858;</span> 조식: 호텔식</div>
+          <div class="meal-tag"><span class="meal-icon">&#127843;</span> 중식: 현지식</div>
+          <div class="meal-tag"><span class="meal-icon">&#127860;</span> 석식: 만찬 (단독룸)</div>
+        </div>
+        <div class="hotel-row">
+          <div class="hotel-icon">&#127976;</div>
+          <div class="hotel-info">
+            <h4>국제호텔</h4>
+            <p>&#11088;&#11088;&#11088;&#11088;&#11088; &middot; 2인 1실</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 (공통) -->
+      <div class="day-card common-day">
+        <div class="day-header">
+          <div>
+            <div class="day-label">제3일 &mdash; 8월 29일 (토)</div>
+            <div class="day-date">연길 &rarr; 도문 &rarr; 인천</div>
+          </div>
+          <div class="day-route">OZ352 &nbsp; 17:30 출발</div>
+        </div>
+        <div class="day-body">
+          <ul class="event-list">
+            <li class="event-item">
+              <div class="event-icon">&#128652;</div>
+              <div class="event-details">
+                <h4>도문으로 이동</h4>
+                <p>호텔 조식 후 출발, 약 1시간 소요</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#127758;</div>
+              <div class="event-details">
+                <h4>도문 두만강 강변공원</h4>
+                <p>아름다운 두만강 강변 공원 &middot; 북한이 보이는 곳</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128675;</div>
+              <div class="event-details">
+                <h4>뗏목투어</h4>
+                <p>두만강 뗏목투어 체험 (포함)</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#9992;&#65039;</div>
+              <div class="event-details">
+                <h4>연길 국제공항 출발</h4>
+                <p>비행시간 약 2시간 50분</p>
+              </div>
+              <div class="event-time">17:30</div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#127969;</div>
+              <div class="event-details">
+                <h4>인천 국제공항 도착 및 해산</h4>
+              </div>
+              <div class="event-time">21:20</div>
+            </li>
+          </ul>
+        </div>
+        <div class="meals-row">
+          <div class="meal-tag"><span class="meal-icon">&#127858;</span> 조식: 호텔식</div>
+          <div class="meal-tag"><span class="meal-icon">&#127843;</span> 중식: 연변냉면 + 찹쌀탕수육</div>
+          <div class="meal-tag"><span class="meal-icon">&#127860;</span> 석식: 기내식</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────── WEST COURSE ─────── -->
+    <div class="tab-content" id="tab-west">
+
+      <!-- Day 1 (공통) -->
+      <div class="day-card common-day">
+        <div class="day-header">
+          <div>
+            <div class="day-label">제1일 &mdash; 8월 27일 (목)</div>
+            <div class="day-date">인천 &rarr; 연길 &rarr; 이도백하</div>
+          </div>
+          <div class="day-route">OZ351 &nbsp; 15:20 출발</div>
+        </div>
+        <div class="day-body">
+          <ul class="event-list">
+            <li class="event-item">
+              <div class="event-icon">&#9992;&#65039;</div>
+              <div class="event-details">
+                <h4>인천 국제공항 출발</h4>
+                <p>제2여객터미널 &middot; 비행시간 약 2시간 10분</p>
+              </div>
+              <div class="event-time">15:20</div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128747;</div>
+              <div class="event-details">
+                <h4>연길 국제공항 도착</h4>
+                <p>입국 수속 및 가이드 미팅</p>
+              </div>
+              <div class="event-time">16:30</div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128652;</div>
+              <div class="event-details">
+                <h4>이도백하로 이동</h4>
+                <p>리무진버스 이동 약 2시간 소요</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#9832;&#65039;</div>
+              <div class="event-details">
+                <h4>다이너스티 온천욕 체험</h4>
+                <p>수영복 + 수영모 필수! &middot; 22시까지 이용 가능</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="meals-row">
+          <div class="meal-tag"><span class="meal-icon">&#127843;</span> 중식: 기내식</div>
+          <div class="meal-tag"><span class="meal-icon">&#127860;</span> 석식: 특식 (소불고기전골)</div>
+        </div>
+        <div class="hotel-row">
+          <div class="hotel-icon">&#127976;</div>
+          <div class="hotel-info">
+            <h4>다이너스티 온천 호텔</h4>
+            <p>&#11088;&#11088;&#11088;&#11088;&#11088; &middot; 2인 1실</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 West -->
+      <div class="day-card west-course">
+        <div class="day-header">
+          <div>
+            <div class="day-label">제2일 &mdash; 8월 28일 (금)</div>
+            <div class="day-date">이도백하 &rarr; 백두산 서파 &rarr; 용정 &rarr; 연길</div>
+          </div>
+          <div class="day-route">&#9968;&#65039; 서파 코스</div>
+        </div>
+        <div class="day-body">
+          <ul class="event-list">
+            <li class="event-item">
+              <div class="event-icon">&#128652;</div>
+              <div class="event-details">
+                <h4>백두산 서파로 이동</h4>
+                <p>호텔 출발, 약 1시간 30분 소요</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#127804;</div>
+              <div class="event-details">
+                <h4>고산화원 (차창 관광)</h4>
+                <p>들꽃 만발한 야생화 자생지</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#129406;</div>
+              <div class="event-details">
+                <h4>백두산 등정 (1,442개 계단)</h4>
+                <p>계단길을 이용하여 약 40분 등정</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#9968;&#65039;</div>
+              <div class="event-details">
+                <h4>백두산 천지 감상</h4>
+                <p>조중경계선 제37호 경계비 &middot; 우리 민족의 영산 백두산 천지</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#127956;&#65039;</div>
+              <div class="event-details">
+                <h4>금강대협곡</h4>
+                <p>천지가 용암을 분출하며 만들어낸 V자 형태의 대협곡</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128167;</div>
+              <div class="event-details">
+                <h4>쌍제자하</h4>
+                <p>화산활동으로 갈라진 땅속에 계곡이 흐르는 비경</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128652;</div>
+              <div class="event-details">
+                <h4>용정 경유 &rarr; 연길 도착</h4>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128134;</div>
+              <div class="event-details">
+                <h4>전신 마사지</h4>
+                <p>피로를 풀어주는 전신 마사지 90분 (매너팁 별도)</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#127865;</div>
+              <div class="event-details">
+                <h4>만찬 (단독룸)</h4>
+                <p>만찬 및 석식 후 호텔 이동</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="meals-row">
+          <div class="meal-tag"><span class="meal-icon">&#127858;</span> 조식: 호텔식</div>
+          <div class="meal-tag"><span class="meal-icon">&#127843;</span> 중식: 현지식</div>
+          <div class="meal-tag"><span class="meal-icon">&#127860;</span> 석식: 만찬 (단독룸)</div>
+        </div>
+        <div class="hotel-row">
+          <div class="hotel-icon">&#127976;</div>
+          <div class="hotel-info">
+            <h4>국제호텔</h4>
+            <p>&#11088;&#11088;&#11088;&#11088;&#11088; &middot; 2인 1실</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 (공통) -->
+      <div class="day-card common-day">
+        <div class="day-header">
+          <div>
+            <div class="day-label">제3일 &mdash; 8월 29일 (토)</div>
+            <div class="day-date">연길 &rarr; 도문 &rarr; 인천</div>
+          </div>
+          <div class="day-route">OZ352 &nbsp; 17:30 출발</div>
+        </div>
+        <div class="day-body">
+          <ul class="event-list">
+            <li class="event-item">
+              <div class="event-icon">&#128652;</div>
+              <div class="event-details">
+                <h4>도문으로 이동</h4>
+                <p>호텔 조식 후 출발, 약 1시간 소요</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#127758;</div>
+              <div class="event-details">
+                <h4>도문 두만강 강변공원</h4>
+                <p>아름다운 두만강 강변 공원 &middot; 북한이 보이는 곳</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#128675;</div>
+              <div class="event-details">
+                <h4>뗏목투어</h4>
+                <p>두만강 뗏목투어 체험 (포함)</p>
+              </div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#9992;&#65039;</div>
+              <div class="event-details">
+                <h4>연길 국제공항 출발</h4>
+                <p>비행시간 약 2시간 50분</p>
+              </div>
+              <div class="event-time">17:30</div>
+            </li>
+            <li class="event-item">
+              <div class="event-icon">&#127969;</div>
+              <div class="event-details">
+                <h4>인천 국제공항 도착 및 해산</h4>
+              </div>
+              <div class="event-time">21:20</div>
+            </li>
+          </ul>
+        </div>
+        <div class="meals-row">
+          <div class="meal-tag"><span class="meal-icon">&#127858;</span> 조식: 호텔식</div>
+          <div class="meal-tag"><span class="meal-icon">&#127843;</span> 중식: 연변냉면 + 찹쌀탕수육</div>
+          <div class="meal-tag"><span class="meal-icon">&#127860;</span> 석식: 기내식</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ COMPARISON ═══════════════════════════════════════ -->
+<section class="comparison-section">
+  <div class="section-title">
+    <h2>북파 vs 서파 코스 비교</h2>
+    <p>2일차 일정의 주요 차이점을 한눈에 비교하세요</p>
+    <span class="divider"></span>
+  </div>
+
+  <div class="comparison-table-wrapper">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>제안 1 &mdash; 북파 코스</th>
+          <th>제안 2 &mdash; 서파 코스</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>이동 시간</td>
+          <td>호텔에서 약 30분</td>
+          <td>호텔에서 약 1시간 30분</td>
+        </tr>
+        <tr>
+          <td>등정 방법</td>
+          <td>셔틀버스 + 10인승 봉고차(짚차)로 천문봉 이동</td>
+          <td>1,442개 계단을 이용한 도보 등정 (약 40분)</td>
+        </tr>
+        <tr>
+          <td>천지 관람</td>
+          <td>천문봉 정상에서 천지 조망</td>
+          <td>조중경계선 제37호 경계비에서 천지 감상</td>
+        </tr>
+        <tr>
+          <td>주요 관광지</td>
+          <td>온천지대, 장백폭포</td>
+          <td>고산화원(야생화), 금강대협곡, 쌍제자하</td>
+        </tr>
+        <tr>
+          <td>용정 관광</td>
+          <td>해란강, 일송정, 용두레 우물, 윤동주 생가</td>
+          <td>용정 경유</td>
+        </tr>
+        <tr>
+          <td>난이도</td>
+          <td>차량 이동 중심으로 비교적 편안함</td>
+          <td>계단 등반이 있어 체력 필요</td>
+        </tr>
+        <tr>
+          <td>특징</td>
+          <td>클래식한 북파 루트 &middot; 장백폭포의 장관</td>
+          <td>자연 경관이 수려 &middot; 금강대협곡 비경</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ MEETING ═══════════════════════════════════════ -->
+<section class="meeting-section">
+  <div class="meeting-content">
+    <h2>집결 안내</h2>
+    <div class="meeting-grid">
+      <div class="meeting-item">
+        <div class="m-icon">&#128197;</div>
+        <div class="m-label">날짜</div>
+        <div class="m-value">2026년 8월 27일 (목)</div>
+      </div>
+      <div class="meeting-item">
+        <div class="m-icon">&#9200;</div>
+        <div class="m-label">시간</div>
+        <div class="m-value">13:00</div>
+      </div>
+      <div class="meeting-item">
+        <div class="m-icon">&#128205;</div>
+        <div class="m-label">장소</div>
+        <div class="m-value">인천국제공항 제2터미널<br>3층 출국장 12번 출입문 옆<br>하나투어 앞</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ PRICE ═══════════════════════════════════════ -->
+<section class="price-section">
+  <div class="section-title">
+    <h2>여행 비용</h2>
+    <p>두 코스 모두 동일한 비용입니다</p>
+    <span class="divider"></span>
+  </div>
+
+  <div class="price-card">
+    <div class="price-label">1인 기준</div>
+    <div class="price-amount">1,249,000원</div>
+    <div class="price-note">항공권 698,000원 + 유류세 인상금액 포함</div>
+    <div class="price-detail">
+      싱글차지비 (1인 1실 사용 시): <strong>+160,000원</strong>
+    </div>
+    <div class="price-highlights">
+      <span class="price-highlight-tag">NO 팁</span>
+      <span class="price-highlight-tag">NO 옵션</span>
+      <span class="price-highlight-tag">만찬 포함</span>
+      <span class="price-highlight-tag">온천 포함</span>
+      <span class="price-highlight-tag">마사지 포함</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-brand">(주)하나투어 롯데백화점</div>
+  <div class="footer-tel">1544-4596</div>
+  <div class="footer-note">
+    ※ 상기 일정은 항공 및 현지 사정에 따라 다소 변경될 수 있습니다.<br>
+    이카 아카데미 총동문회 산악동호회 단체 관광 제안서
+  </div>
+</footer>
+
+<script>
+function switchTab(course) {
+  // Toggle tab content
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + course).classList.add('active');
+
+  // Toggle tab buttons
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.querySelector('.tab-btn.' + course).classList.add('active');
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>

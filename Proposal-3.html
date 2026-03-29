@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한중 크루즈 & 훼리 고품격 3박 4일 | 산행팀</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap');
+
+  :root {
+    --primary: #0a2647;
+    --primary-light: #144272;
+    --accent: #d4a853;
+    --accent-dark: #b8912e;
+    --cruise: #0277bd;
+    --cruise-light: #e1f5fe;
+    --cruise-dark: #01579b;
+    --land: #2e7d32;
+    --land-light: #e8f5e9;
+    --bg: #f4f7fa;
+    --card-bg: #ffffff;
+    --text: #2d2d2d;
+    --text-light: #666;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-hover: 0 8px 40px rgba(0,0,0,0.15);
+    --radius: 16px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0a1628 0%, #0a2647 30%, #144272 70%, #0d3b66 100%);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 70%, rgba(2,119,189,0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 30%, rgba(212,168,83,0.15) 0%, transparent 50%);
+  }
+
+  .hero-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .hero-waves svg {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 100%;
+    animation: wave 8s linear infinite;
+  }
+
+  .hero-waves svg:nth-child(2) {
+    animation: wave 12s linear infinite reverse;
+    opacity: 0.5;
+  }
+
+  @keyframes wave {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    max-width: 900px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(212,168,83,0.2);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.4rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 5.5vw, 4rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, var(--accent), #f0d78c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .hero-info-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-info-item {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 1rem 1.6rem;
+    color: #fff;
+    min-width: 150px;
+  }
+
+  .hero-info-item .label {
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-info-item .value {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+    color: rgba(255,255,255,0.4);
+    font-size: 1.5rem;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+  }
+
+  /* ── Section ── */
+  .section {
+    padding: 5rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+  }
+
+  .section-title .divider {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+  }
+
+  /* ── Overview ── */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .overview-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+
+  .overview-card:hover { transform: translateY(-4px); }
+
+  .overview-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+  .overview-card h3 {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+
+  .overview-card .val {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* ── Include ── */
+  .include-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .include-box {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+
+  .include-box h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .include-box.included h3 { color: var(--land); }
+  .include-box.not-included h3 { color: #c62828; }
+
+  .include-box ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .include-box ul li {
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    border: 1px solid #eee;
+  }
+
+  .include-box.included ul li {
+    background: var(--land-light);
+    border-color: #c8e6c9;
+  }
+
+  .include-box.not-included ul li {
+    background: #ffebee;
+    border-color: #ffcdd2;
+  }
+
+  /* ── Timeline ── */
+  .timeline-section {
+    padding: 5rem 1.5rem;
+    background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+  }
+
+  .timeline-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .day-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .day-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .day-header.cruise { background: linear-gradient(135deg, var(--cruise-dark), var(--cruise)); }
+  .day-header.land { background: linear-gradient(135deg, var(--land), #43a047); }
+  .day-header.mixed { background: linear-gradient(135deg, var(--land), var(--cruise)); }
+
+  .day-label {
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .day-date {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+  }
+
+  .day-route {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.15);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+  }
+
+  .day-body { padding: 2rem; }
+
+  .event-list { list-style: none; }
+
+  .event-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: flex-start;
+  }
+
+  .event-item:last-child { border-bottom: none; }
+
+  .event-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    background: var(--cruise-light);
+  }
+
+  .event-icon.land-icon { background: var(--land-light); }
+
+  .event-details h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+
+  .event-details p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+
+  .event-time {
+    font-size: 0.8rem;
+    color: var(--accent-dark);
+    font-weight: 600;
+    white-space: nowrap;
+    min-width: 42px;
+    text-align: right;
+  }
+
+  /* Meals */
+  .meals-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1.2rem 2rem;
+    background: #fafafa;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .meal-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+  }
+
+  /* Hotel / Cruise Room */
+  .stay-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2rem;
+    border-top: 1px solid #eee;
+  }
+
+  .stay-row.cruise-stay { background: linear-gradient(135deg, #e3f2fd, #e8eaf6); }
+  .stay-row.hotel-stay { background: linear-gradient(135deg, #f8f6f0, #faf8f2); }
+
+  .stay-row .stay-icon { font-size: 1.5rem; }
+
+  .stay-row .stay-info h4 {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--primary);
+  }
+
+  .stay-row .stay-info p {
+    font-size: 0.85rem;
+    color: var(--accent-dark);
+  }
+
+  /* ── Meeting ── */
+  .meeting-section {
+    padding: 4rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary), #0a1628);
+    color: #fff;
+  }
+
+  .meeting-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .meeting-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--accent);
+  }
+
+  .meeting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .meeting-item {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .meeting-item .m-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .meeting-item .m-label { font-size: 0.8rem; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; }
+  .meeting-item .m-value { font-size: 1.05rem; font-weight: 600; margin-top: 0.3rem; }
+
+  /* ── Price ── */
+  .price-section {
+    padding: 5rem 1.5rem;
+    text-align: center;
+  }
+
+  .price-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 3rem;
+    box-shadow: var(--shadow-hover);
+    border: 2px solid var(--accent);
+  }
+
+  .price-card .price-label {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .price-card .price-amount {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .price-card .price-note {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .price-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .price-highlight-tag {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* ── Cruise Features ── */
+  .features-section {
+    padding: 5rem 1.5rem;
+    background: #fff;
+  }
+
+  .features-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    background: var(--bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+  }
+
+  .feature-card .f-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+  .feature-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+
+  /* ── Footer ── */
+  .footer {
+    background: #111;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .footer-brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-tel {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0.5rem 0 1rem;
+  }
+
+  .footer-note {
+    font-size: 0.85rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .include-section { grid-template-columns: 1fr; }
+    .hero-info-row { gap: 0.8rem; }
+    .hero-info-item { min-width: 130px; padding: 0.8rem 1rem; }
+    .day-header { flex-direction: column; align-items: flex-start; }
+    .day-body { padding: 1.5rem; }
+    .price-card { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════ HERO ════════════════════════════ -->
+<section class="hero">
+  <div class="hero-waves">
+    <svg viewBox="0 0 2880 200" preserveAspectRatio="none">
+      <path d="M0 80 Q360 0 720 80 T1440 80 T2160 80 T2880 80 L2880 200 L0 200Z" fill="rgba(255,255,255,0.04)"/>
+    </svg>
+    <svg viewBox="0 0 2880 200" preserveAspectRatio="none">
+      <path d="M0 120 Q360 60 720 120 T1440 120 T2160 120 T2880 120 L2880 200 L0 200Z" fill="rgba(255,255,255,0.03)"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">이카 아카데미 총동문회 산악동호회</div>
+    <h1><span>한중 크루즈 &amp; 훼리</span><br>고품격 3박 4일</h1>
+    <p class="hero-sub">인천 &mdash; 연태 &middot; 천고산 트래킹 &middot; 봉래 관광 (산행팀)</p>
+    <div class="hero-info-row">
+      <div class="hero-info-item">
+        <div class="label">여행 일정</div>
+        <div class="value">2026. 8. 29 - 9. 1</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="label">교통편</div>
+        <div class="value">크루즈 3.3만톤</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="label">출발일</div>
+        <div class="value">토요일 출발</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="label">비용 (1인)</div>
+        <div class="value">749,000원</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">&#9660;</div>
+</section>
+
+<!-- ════════════════════════════ OVERVIEW ════════════════════════════ -->
+<section class="section">
+  <div class="section-title">
+    <h2>여행 개요</h2>
+    <p>노팁 + 노옵션 + 노쇼핑</p>
+    <span class="divider"></span>
+  </div>
+
+  <div class="overview-grid">
+    <div class="overview-card">
+      <div class="icon">&#128674;</div>
+      <h3>교통편</h3>
+      <div class="val">한중 크루즈 훼리<br><small style="font-weight:400;font-size:0.8rem;color:var(--text-light)">3만 3천톤 / 800명 정원</small></div>
+    </div>
+    <div class="overview-card">
+      <div class="icon">&#128197;</div>
+      <h3>일정</h3>
+      <div class="val">3박 4일<br><small style="font-weight:400;font-size:0.8rem;color:var(--text-light)">8/29(토) ~ 9/1(화)</small></div>
+    </div>
+    <div class="overview-card">
+      <div class="icon">&#127976;</div>
+      <h3>숙소</h3>
+      <div class="val">크루즈 2박 + 호텔 1박<br><small style="font-weight:400;font-size:0.8rem;color:var(--text-light)">5성 특급 (2인 1실)</small></div>
+    </div>
+    <div class="overview-card">
+      <div class="icon">&#9968;&#65039;</div>
+      <h3>트래킹</h3>
+      <div class="val">천고산 534m<br><small style="font-weight:400;font-size:0.8rem;color:var(--text-light)">약 3시간 소요</small></div>
+    </div>
+  </div>
+
+  <div class="include-section">
+    <div class="include-box included">
+      <h3>&#9989; 포함 사항</h3>
+      <ul>
+        <li>크루즈 왕복</li>
+        <li>일반실 2인1실 2박</li>
+        <li>5성 특급호텔 1박 (2인1실)</li>
+        <li>차량료</li>
+        <li>관광지 입장료</li>
+        <li>택스 / 유류세 / 항만세</li>
+        <li>호텔 조식 1회</li>
+        <li>선내 석식 2회</li>
+        <li>선내 조식 2회</li>
+        <li>현지 중식 1회</li>
+        <li>산동요리 중식 1회</li>
+        <li>연태 관광</li>
+        <li>가이드팁 / 기사팁</li>
+        <li>생수 제공</li>
+      </ul>
+    </div>
+    <div class="include-box not-included">
+      <h3>&#10060; 불포함 사항</h3>
+      <ul>
+        <li>개인 경비</li>
+        <li>주류</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ CRUISE FEATURES ════════════════════════════ -->
+<section class="features-section">
+  <div class="section-title">
+    <h2>크루즈 부대시설</h2>
+    <p>3만 3천톤급 대형 크루즈에서 즐기는 다양한 편의시설</p>
+    <span class="divider"></span>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="f-icon">&#128717;&#65039;</div>
+      <h3>면세점</h3>
+      <p>선내 면세 쇼핑</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">&#127908;</div>
+      <h3>가라오케</h3>
+      <p>50명 장기자랑 노래방</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">&#127916;</div>
+      <h3>영화관</h3>
+      <p>선내 영화 상영</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">&#9749;</div>
+      <h3>카페</h3>
+      <p>바다를 바라보며 커피 한잔</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">&#127859;</div>
+      <h3>편의점</h3>
+      <p>각종 간식 및 생필품</p>
+    </div>
+    <div class="feature-card">
+      <div class="f-icon">&#127866;</div>
+      <h3>만찬 행사</h3>
+      <p>1일차 선상 만찬 (2시간)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ ITINERARY ════════════════════════════ -->
+<section class="timeline-section">
+  <div class="section-title">
+    <h2>상세 일정</h2>
+    <p>크루즈와 육상 관광이 어우러진 3박 4일</p>
+    <span class="divider"></span>
+  </div>
+
+  <div class="timeline-container">
+
+    <!-- ── Day 1 ── -->
+    <div class="day-card">
+      <div class="day-header cruise">
+        <div>
+          <div class="day-label">제1일 &mdash; 8월 29일 (토)</div>
+          <div class="day-date">인천 출발</div>
+        </div>
+        <div class="day-route">&#128674; 크루즈 승선</div>
+      </div>
+      <div class="day-body">
+        <ul class="event-list">
+          <li class="event-item">
+            <div class="event-icon">&#128205;</div>
+            <div class="event-details">
+              <h4>인천 송도 여객터미널 집결</h4>
+              <p>2층 관광안내소 집결</p>
+            </div>
+            <div class="event-time">15:30</div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon">&#128196;</div>
+            <div class="event-details">
+              <h4>출국 수속</h4>
+              <p>훼리 (3만 3천톤 / 800명 정원)</p>
+            </div>
+            <div class="event-time">16:30</div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon">&#128674;</div>
+            <div class="event-details">
+              <h4>크루즈 승선 &amp; 체크인</h4>
+              <p>7층 카운터에서 체크인</p>
+            </div>
+            <div class="event-time">18:00</div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon">&#127860;</div>
+            <div class="event-details">
+              <h4>선상식 (석식)</h4>
+              <p>8층 식당</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon">&#127908;</div>
+            <div class="event-details">
+              <h4>부대시설 즐기기</h4>
+              <p>면세점, 편의점, 가라오케, 영화관, 카페 등</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon">&#127865;</div>
+            <div class="event-details">
+              <h4>만찬 행사 진행</h4>
+              <p>2시간 진행 후 자유시간</p>
+            </div>
+            <div class="event-time">20:00</div>
+          </li>
+        </ul>
+      </div>
+      <div class="meals-row">
+        <div class="meal-tag"><span>&#127860;</span> 석식: 선상식</div>
+      </div>
+      <div class="stay-row cruise-stay">
+        <div class="stay-icon">&#128674;</div>
+        <div class="stay-info">
+          <h4>한중 크루즈</h4>
+          <p>침대칸 / 2인 1실 &middot; 일반실</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Day 2 ── -->
+    <div class="day-card">
+      <div class="day-header land">
+        <div>
+          <div class="day-label">제2일 &mdash; 8월 30일 (일)</div>
+          <div class="day-date">연태 &middot; 천고산</div>
+        </div>
+        <div class="day-route">&#9968;&#65039; 천고산 트래킹</div>
+      </div>
+      <div class="day-body">
+        <ul class="event-list">
+          <li class="event-item">
+            <div class="event-icon">&#127780;&#65039;</div>
+            <div class="event-details">
+              <h4>조식 후 하선 준비</h4>
+              <p>가이드 미팅</p>
+            </div>
+            <div class="event-time">07:00</div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#128652;</div>
+            <div class="event-details">
+              <h4>천고산으로 이동</h4>
+              <p>전용차량 약 1시간 10분 소요</p>
+            </div>
+            <div class="event-time">10:00</div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#127858;</div>
+            <div class="event-details">
+              <h4>중식 (현지식)</h4>
+              <p>빵차 탑승 후 이동</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#129406;</div>
+            <div class="event-details">
+              <h4>천고산 트래킹</h4>
+              <p>해발 534m &middot; 약 3시간 소요</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#127860;</div>
+            <div class="event-details">
+              <h4>디너 (특식)</h4>
+              <p>뷔페 + 해산물 + 주류 + 음료 등</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#127751;</div>
+            <div class="event-details">
+              <h4>명나라 옛고을 소성리</h4>
+              <p>야경투어 및 야시장투어</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#127976;</div>
+            <div class="event-details">
+              <h4>호텔 도착 및 자유시간</h4>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="meals-row">
+        <div class="meal-tag"><span>&#127858;</span> 조식: 선상식</div>
+        <div class="meal-tag"><span>&#127843;</span> 중식: 현지식</div>
+        <div class="meal-tag"><span>&#127860;</span> 석식: 특식 (뷔페+해산물)</div>
+      </div>
+      <div class="stay-row hotel-stay">
+        <div class="stay-icon">&#127976;</div>
+        <div class="stay-info">
+          <h4>쉐라톤 골든비치 리조트 (또는 동급)</h4>
+          <p>&#11088;&#11088;&#11088;&#11088;&#11088; 5성 특급 &middot; 2인 1실</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Day 3 ── -->
+    <div class="day-card">
+      <div class="day-header mixed">
+        <div>
+          <div class="day-label">제3일 &mdash; 8월 31일 (월)</div>
+          <div class="day-date">연태 &middot; 봉래 관광 &rarr; 크루즈 승선</div>
+        </div>
+        <div class="day-route">&#127983; 봉래 &amp; &#128674; 크루즈</div>
+      </div>
+      <div class="day-body">
+        <ul class="event-list">
+          <li class="event-item">
+            <div class="event-icon land-icon">&#127780;&#65039;</div>
+            <div class="event-details">
+              <h4>호텔 조식 후 가이드 미팅</h4>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#128652;</div>
+            <div class="event-details">
+              <h4>봉래로 이동</h4>
+              <p>특급 관광지 &middot; 약 1시간 10분 소요</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#127983;</div>
+            <div class="event-details">
+              <h4>삼선산풍경구</h4>
+              <p>해양관 &middot; 제2의 이화원</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#128142;</div>
+            <div class="event-details">
+              <h4>옥화목 (1억년에 형성)</h4>
+              <p>옥전시관, 목공예술관</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#127912;</div>
+            <div class="event-details">
+              <h4>서예관 &middot; 산수화관</h4>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#127858;</div>
+            <div class="event-details">
+              <h4>중식 (산동식)</h4>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon land-icon">&#9961;&#65039;</div>
+            <div class="event-details">
+              <h4>8선과해 (팔선과해)</h4>
+              <p>팔선교, 선원탑, 회현정, 팔선대</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon">&#128196;</div>
+            <div class="event-details">
+              <h4>연태항 도착 &amp; 출국 수속</h4>
+            </div>
+            <div class="event-time">16:00</div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon">&#128674;</div>
+            <div class="event-details">
+              <h4>크루즈 승선 &amp; 체크인</h4>
+              <p>7층 카운터에서 체크인</p>
+            </div>
+            <div class="event-time">19:00</div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon">&#127860;</div>
+            <div class="event-details">
+              <h4>선상식 (석식)</h4>
+            </div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon">&#127908;</div>
+            <div class="event-details">
+              <h4>50명 장기자랑 노래방</h4>
+              <p>19:30 ~ 21:30 (2시간)</p>
+            </div>
+            <div class="event-time">19:30</div>
+          </li>
+        </ul>
+      </div>
+      <div class="meals-row">
+        <div class="meal-tag"><span>&#127858;</span> 조식: 뷔페식</div>
+        <div class="meal-tag"><span>&#127843;</span> 중식: 산동식</div>
+        <div class="meal-tag"><span>&#127860;</span> 석식: 선상식</div>
+      </div>
+      <div class="stay-row cruise-stay">
+        <div class="stay-icon">&#128674;</div>
+        <div class="stay-info">
+          <h4>한중 크루즈</h4>
+          <p>침대칸 / 2인 1실 &middot; 일반실</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Day 4 ── -->
+    <div class="day-card">
+      <div class="day-header cruise">
+        <div>
+          <div class="day-label">제4일 &mdash; 9월 1일 (화)</div>
+          <div class="day-date">인천 도착</div>
+        </div>
+        <div class="day-route">&#127969; 귀국</div>
+      </div>
+      <div class="day-body">
+        <ul class="event-list">
+          <li class="event-item">
+            <div class="event-icon">&#127780;&#65039;</div>
+            <div class="event-details">
+              <h4>조식 후 선내 자유시간</h4>
+            </div>
+            <div class="event-time">07:00</div>
+          </li>
+          <li class="event-item">
+            <div class="event-icon">&#128674;</div>
+            <div class="event-details">
+              <h4>인천 송도항 국제여객터미널 도착</h4>
+              <p>하선 후 해산</p>
+            </div>
+            <div class="event-time">11:00</div>
+          </li>
+        </ul>
+      </div>
+      <div class="meals-row">
+        <div class="meal-tag"><span>&#127858;</span> 조식: 선상식</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════ MEETING ════════════════════════════ -->
+<section class="meeting-section">
+  <div class="meeting-content">
+    <h2>집결 안내</h2>
+    <div class="meeting-grid">
+      <div class="meeting-item">
+        <div class="m-icon">&#128197;</div>
+        <div class="m-label">날짜</div>
+        <div class="m-value">2026년 8월 29일 (토)</div>
+      </div>
+      <div class="meeting-item">
+        <div class="m-icon">&#9200;</div>
+        <div class="m-label">시간</div>
+        <div class="m-value">15:30</div>
+      </div>
+      <div class="meeting-item">
+        <div class="m-icon">&#128205;</div>
+        <div class="m-label">장소</div>
+        <div class="m-value">인천 송도항<br>연수구 국제항만대로 326번길 57<br>국제여객터미널 2층</div>
+      </div>
+      <div class="meeting-item">
+        <div class="m-icon">&#128210;</div>
+        <div class="m-label">준비물</div>
+        <div class="m-value">여권 지참 필수</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ PRICE ════════════════════════════ -->
+<section class="price-section">
+  <div class="section-title">
+    <h2>여행 비용</h2>
+    <span class="divider"></span>
+  </div>
+
+  <div class="price-card">
+    <div class="price-label">1인 기준</div>
+    <div class="price-amount">749,000원</div>
+    <div class="price-note">크루즈 왕복 + 5성 특급호텔 1박 + 전 일정 관광 포함</div>
+    <div class="price-highlights">
+      <span class="price-highlight-tag">NO 팁</span>
+      <span class="price-highlight-tag">NO 옵션</span>
+      <span class="price-highlight-tag">NO 쇼핑</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════ FOOTER ════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-brand">(주)하나투어 롯데백화점</div>
+  <div class="footer-tel">1544-4596</div>
+  <div class="footer-note">
+    ※ 상기 일정은 항공 및 현지 사정에 따라 다소 변경될 수 있습니다.<br>
+    이카 아카데미 총동문회 산악동호회 단체 관광 제안서
+  </div>
+</footer>
+
+</body>
+</html>
